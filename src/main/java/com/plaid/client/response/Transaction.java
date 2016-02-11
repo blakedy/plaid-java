@@ -1,5 +1,6 @@
 package com.plaid.client.response;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -11,7 +12,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.joda.deser.LocalDateDeserializer;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class Transaction {
+public class Transaction implements Serializable {
     
     private String id;
     private String accountId;

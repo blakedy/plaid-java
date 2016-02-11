@@ -1,11 +1,12 @@
 package com.plaid.client.response;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class TransactionsResponse extends AccountsResponse {
+public class TransactionsResponse extends AccountsResponse implements Serializable {
 
     protected List<Transaction> transactions;
     

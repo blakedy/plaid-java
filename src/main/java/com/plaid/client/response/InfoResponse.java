@@ -1,12 +1,13 @@
 package com.plaid.client.response;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class InfoResponse extends PlaidUserResponse {
+public class InfoResponse extends PlaidUserResponse implements Serializable {
 
 	private List<Account> accounts;
 	private Info info;

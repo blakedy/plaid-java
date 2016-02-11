@@ -1,9 +1,11 @@
 package com.plaid.client.response;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.plaid.client.response.MfaResponse.DeviceChoiceMfaResponse;
 import com.plaid.client.response.MfaResponse.DeviceListMfaResponse;
@@ -20,7 +22,7 @@ import com.plaid.client.response.MfaResponse.SelectionsMfaResponse;
         @Type(value = DeviceListMfaResponse.class,      name = MfaResponse.LIST),
         @Type(value = QuestionsMfaResponse.class,       name = MfaResponse.QUESTIONS),
         @Type(value = SelectionsMfaResponse.class,		name = MfaResponse.SELECTIONS)}) 
-public abstract class MfaResponse extends PlaidUserResponse {
+public abstract class MfaResponse extends PlaidUserResponse implements Serializable {
 
     public final static String DEVICE = "device";
     public final static String LIST = "list";

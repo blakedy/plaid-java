@@ -1,10 +1,12 @@
 package com.plaid.client.response;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
-public class Account {
+public class Account implements Serializable {
 
     private String id;
     private String item;
